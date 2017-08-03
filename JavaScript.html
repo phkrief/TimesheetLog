@@ -1,0 +1,17 @@
+<script>
+function run() {
+   // Gather Calendars
+   var elements = document.getElementsByName("calendars");
+   var selectedCal =[];
+   for (var i = 0; i < elements.length; i++) {
+      var checkbox = elements[i];
+
+      if (checkbox.checked) selectedCal.push(checkbox.id);
+   }
+
+   var startDate = document.getElementById("startDate").value;
+   var endDate = document.getElementById("endDate").value;
+
+   google.script.run.extractAll(selectedCal, startDate, endDate);
+}
+</script>
